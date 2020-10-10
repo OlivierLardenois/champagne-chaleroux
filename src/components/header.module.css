@@ -1,0 +1,26 @@
+.header {
+  background: #262626;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+}
+
+.linkWrapper {
+  margin: 0;
+  display: inline-block;
+  padding: 1rem 1rem;
+}
+
+.linkWrapper:hover {
+  background-color: #474747;
+}
+
+.logo {
+  margin: auto 50px;
+}
