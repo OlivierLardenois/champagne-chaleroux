@@ -3,6 +3,12 @@ import Img from "gatsby-image";
 import React from "react";
 import styles from "./header.module.css";
 
+const PAGES = [
+  { label: "Accueil", link: "/" },
+  { label: "Nos Champagnes", link: "/products" },
+  { label: "Gallerie", link: "/gallery" },
+];
+
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -16,12 +22,6 @@ const Header = () => {
     }
   `);
 
-  const pages = [
-    { label: "Accueil", link: "/" },
-    { label: "Nos Champagnes", link: "/products" },
-    { label: "Gallerie", link: "/gallery" },
-  ];
-
   return (
     <header className={styles.header}>
       <Img
@@ -30,7 +30,7 @@ const Header = () => {
       />
       <nav>
         <ul style={{ margin: 0 }}>
-          {pages.map(({ label, link }) => (
+          {PAGES.map(({ label, link }) => (
             <li className={styles.linkWrapper}>
               <Link to={link} className={styles.link}>
                 {label}
