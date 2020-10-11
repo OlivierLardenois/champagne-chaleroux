@@ -12,7 +12,7 @@ const PAGES = [
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "logo.png" }) {
+      logo: file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
           fixed(width: 50) {
             ...GatsbyImageSharpFixed
@@ -24,10 +24,7 @@ const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Img
-        className={styles.logo}
-        fixed={data.placeholderImage.childImageSharp.fixed}
-      />
+      <Img className={styles.logo} fixed={data.logo.childImageSharp.fixed} />
       <nav>
         <ul style={{ margin: 0 }}>
           {PAGES.map(({ label, link }) => (

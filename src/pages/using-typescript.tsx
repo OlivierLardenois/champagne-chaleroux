@@ -1,50 +1,94 @@
-// If you don't want to use TypeScript you can delete this file!
+import { graphql, PageProps } from "gatsby";
+import Img, { FluidObject } from "gatsby-image";
 import React from "react";
-import { PageProps, Link, graphql } from "gatsby";
-
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 type DataProps = {
-  site: {
-    buildTime: string;
-  };
+  background: { childImageSharp: { fluid: FluidObject } };
+  family: { childImageSharp: { fluid: FluidObject } };
 };
 
-const UsingTypescript: React.FC<PageProps<DataProps>> = ({ data, path }) => (
+const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => (
   <Layout>
     <SEO title="Using TypeScript" />
-    <h1>Gatsby supports TypeScript by default!</h1>
-    <p>
-      This means that you can create and write <em>.ts/.tsx</em> files for your
-      pages, components etc. Please note that the <em>gatsby-*.js</em> files
-      (like gatsby-node.js) currently don't support TypeScript yet.
-    </p>
-    <p>
-      For type checking you'll want to install <em>typescript</em> via npm and
-      run <em>tsc --init</em> to create a <em>.tsconfig</em> file.
-    </p>
-    <p>
-      You're currently on the page "{path}" which was built on{" "}
-      {data.site.buildTime}.
-    </p>
-    <p>
-      To learn more, head over to our{" "}
-      <a href="https://www.gatsbyjs.com/docs/typescript/">
-        documentation about TypeScript
-      </a>
-      .
-    </p>
-    <Link to="/">Go back to the homepage</Link>
+    <div style={{ maxHeight: "500px" }}>
+      <Img
+        fluid={data.background.childImageSharp.fluid}
+        style={{ maxHeight: "500px" }}
+      />
+    </div>
+    <article
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 600,
+          marginRight: 40,
+          position: "relative",
+          top: "-25px",
+        }}
+      >
+        <h1 style={{ fontSize: "2.5rem", color: "#AE7743" }}>
+          Venez visiter notre vignoble et notre cave!
+        </h1>
+        <p>
+          Notre vignoble s'étend sur 4 hectares autour des villages « Grands
+          Cru » Avize et Oger où le seul cépage cultivé est le chardonnay. Dans
+          les vignes, dont l'âge moyen est de 50 ans, nous réalisons une
+          agriculture raisonnée qui concilie la tradition viticole champenoise
+          et le respect de l’environnement.
+        </p>
+        <p>
+          Dans notre cellier et dans notre cave, le travail du vin est artisanal
+          (pas de filtration, très peu d’automatisation…). De plus, nous
+          effectuons un long « élevage sur lattes » de 10 ans minimum. En effet,
+          durant cette longue période ( 15 mois minimum pour un champagne) les
+          levures mortes présentent dans les bouteilles vont se dégrader et
+          reléguer de nombreux composés au vins (protéines et polysaccharides).
+          Ces composés vont apporter du corps au vin, de nouveaux arômes et une
+          meilleure mousse.
+        </p>
+        <p>
+          Nous proposons ainsi à la vente des vieux champagnes atypiques «
+          blancs de blancs » aux arômes briochés et toastés.
+        </p>
+      </div>
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "500px",
+          position: "relative",
+          top: "-50px",
+        }}
+      >
+        <Img fluid={data.family.childImageSharp.fluid} />
+      </div>
+    </article>
   </Layout>
 );
 
-export default UsingTypescript;
+export default HomePage;
 
 export const query = graphql`
-  {
-    site {
-      buildTime(formatString: "YYYY-MM-DD hh:mm a z")
+  query {
+    background: file(relativePath: { eq: "background.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    family: file(relativePath: { eq: "family.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   }
 `;

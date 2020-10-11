@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "./footer";
 import Header from "./header";
-import "./layout.css";
+import "./layout.module.css";
 
 const Layout: React.FC = ({ children }) => (
   <>
     <Header />
-    <main style={{ margin: `0 auto`, maxWidth: 960 }}>{children}</main>
+    <main>{children}</main>
     <Footer />
   </>
 );
