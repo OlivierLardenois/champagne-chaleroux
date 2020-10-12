@@ -1,19 +1,19 @@
 import {
   faEnvelope,
   faMapMarkedAlt,
-  faPhone,
+  faPhone
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, PageProps } from "gatsby";
 import Img, { FluidObject } from "gatsby-image";
 import React from "react";
 import Layout from "../components/layout";
+import PresentationSection from "../components/presentation";
 import SEO from "../components/seo";
 import styles from "../styles/index.module.css";
 
 type DataProps = {
   background: { childImageSharp: { fluid: FluidObject } };
-  family: { childImageSharp: { fluid: FluidObject } };
 };
 
 const ADDRESS = "10 Rue des Gris, 51190 Avize";
@@ -29,57 +29,7 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => (
         style={{ maxHeight: "500px" }}
       />
     </div>
-    <section
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 600,
-          marginRight: 40,
-          position: "relative",
-          top: "-25px",
-        }}
-      >
-        <h1 className={styles.sectionTitle}>
-          Venez visiter notre vignoble et notre cave!
-        </h1>
-        <p>
-          Notre vignoble s'étend sur 4 hectares autour des villages « Grands
-          Cru » Avize et Oger où le seul cépage cultivé est le chardonnay. Dans
-          les vignes, dont l'âge moyen est de 50 ans, nous réalisons une
-          agriculture raisonnée qui concilie la tradition viticole champenoise
-          et le respect de l’environnement.
-        </p>
-        <p>
-          Dans notre cellier et dans notre cave, le travail du vin est artisanal
-          (pas de filtration, très peu d’automatisation…). De plus, nous
-          effectuons un long « élevage sur lattes » de 10 ans minimum. En effet,
-          durant cette longue période ( 15 mois minimum pour un champagne) les
-          levures mortes présentent dans les bouteilles vont se dégrader et
-          reléguer de nombreux composés au vins (protéines et polysaccharides).
-          Ces composés vont apporter du corps au vin, de nouveaux arômes et une
-          meilleure mousse.
-        </p>
-        <p>
-          Nous proposons ainsi à la vente des vieux champagnes atypiques «
-          blancs de blancs » aux arômes briochés et toastés.
-        </p>
-      </div>
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          position: "relative",
-          top: "-50px",
-        }}
-      >
-        <Img fluid={data.family.childImageSharp.fluid} />
-      </div>
-    </section>
+    <PresentationSection />
     <section
       style={{
         display: "flex",
@@ -147,13 +97,6 @@ export const query = graphql`
     background: file(relativePath: { eq: "background.jpg" }) {
       childImageSharp {
         fluid(maxHeight: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    family: file(relativePath: { eq: "family.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 500, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }
