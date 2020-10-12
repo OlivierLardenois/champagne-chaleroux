@@ -19,21 +19,8 @@ const PresentationSection: React.FC = () => {
   `);
 
   return (
-    <section
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 600,
-          marginRight: 40,
-          position: "relative",
-          top: "-25px",
-        }}
-      >
+    <section className={styles.sectionWrapper}>
+      <div>
         <h1 className={styles.sectionTitle}>
           Venez visiter notre vignoble et notre cave!
         </h1>
@@ -59,14 +46,7 @@ const PresentationSection: React.FC = () => {
           blancs de blancs » aux arômes briochés et toastés.
         </p>
       </div>
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          position: "relative",
-          top: "-50px",
-        }}
-      >
+      <div>
         <Img fluid={data.family.childImageSharp.fluid} />
       </div>
     </section>

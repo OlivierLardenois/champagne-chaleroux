@@ -1,5 +1,31 @@
+.sectionWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 80px;
+}
+
+.sectionWrapper > div:first-child {
+  margin-right: 40px;
+  margin-top: 40px;
+  max-width: 600px;
+}
+
+.sectionWrapper > div:nth-child(2) {
+  max-width: 500px;
+  min-width: 400px;
+  position: relative;
+  top: -50px;
+  width: 100%;
+}
+
 .sectionTitle {
-  font-size: 2.5rem;
   color: #ae7743;
+  font-size: 2.5rem;
   margin-top: 0;
+}
+
+@media (max-width: 999px) {
+  .sectionWrapper {
+  }
 }
