@@ -26,10 +26,8 @@ const EXTERNAL_EUROPA_LINK = [
 
 const ExternalLink = ({ label, link }: { label: string; link: string }) => {
   return (
-    <li className={styles.linkWrapper}>
-      <a href={link} className={styles.link}>
-        {label}
-      </a>
+    <li className={styles.link}>
+      <a href={link}>{label}</a>
     </li>
   );
 };
@@ -39,23 +37,21 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div>
         <h2 className={styles.title}>Autres domaines à découvrir</h2>
-        <div style={{ display: "flex" }}>
-          <div>
-            <h3 className={styles.subtitle}>En France</h3>
-            <ul style={{ margin: 0 }}>
-              {EXTERNAL_FRANCE_LINK.map(({ label, link }) => (
-                <ExternalLink label={label} link={link} />
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className={styles.subtitle}>En Europe</h3>
-            <ul style={{ margin: 0 }}>
-              {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (
-                <ExternalLink label={label} link={link} />
-              ))}
-            </ul>
-          </div>
+        <div className={styles.linkWrapper}>
+          <h3 className={styles.subtitle}>En France</h3>
+          <ul>
+            {EXTERNAL_FRANCE_LINK.map(({ label, link }) => (
+              <ExternalLink label={label} link={link} />
+            ))}
+          </ul>
+        </div>
+        <div className={styles.linkWrapper} style={{ marginLeft: "10px" }}>
+          <h3 className={styles.subtitle}>En Europe</h3>
+          <ul>
+            {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (
+              <ExternalLink label={label} link={link} />
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

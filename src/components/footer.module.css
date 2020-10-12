@@ -6,18 +6,32 @@
   padding: 3rem;
 }
 
+.footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer li {
+  margin: 5px 0;
+}
+
 .link {
+  list-style-type: none;
+  margin: 0;
+}
+
+.link > a {
   color: #ae7743;
   text-decoration: none;
 }
 
-.link:hover {
+.link > a:hover {
   color: #623408;
 }
 
 .linkWrapper {
-  list-style-type: none;
-  margin: 0;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .subtitle {
