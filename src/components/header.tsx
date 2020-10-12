@@ -26,7 +26,7 @@ const Header = () => {
     <header className={styles.header}>
       <Img className={styles.logo} fixed={data.logo.childImageSharp.fixed} />
       <nav>
-        <ul style={{ margin: 0 }}>
+        <ul>
           {PAGES.map(({ label, link }) => (
             <li className={styles.linkWrapper}>
               <Link to={link} className={styles.link}>

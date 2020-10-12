@@ -1,20 +1,33 @@
 .header {
   background: #202020;
+  box-shadow: 0 -3px 6px 0px #c1c1c1;
   display: flex;
   justify-content: space-between;
+  min-height: 60px;
   position: sticky;
   top: 0;
+  z-index: 1;
+}
+
+.header ul {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .link {
-  color: white;
+  align-items: center;
+  color: #daa879;
+  display: flex;
+  font-size: 20px;
+  padding: 0 1rem;
   text-decoration: none;
 }
 
 .linkWrapper {
+  display: flex;
   margin: 0;
-  display: inline-block;
-  padding: 1rem 1rem;
 }
 
 .linkWrapper:hover {
