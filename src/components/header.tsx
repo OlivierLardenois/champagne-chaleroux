@@ -4,9 +4,9 @@ import React from "react";
 import styles from "./header.module.css";
 
 const PAGES = [
-  { label: "Accueil", link: "/" },
-  { label: "Nos Champagnes", link: "/products" },
-  { label: "Gallerie", link: "/gallery" },
+  // { label: "Accueil", link: "/" },
+  { label: "Nos Champagnes", link: "/nos-champagnes" },
+  // { label: "Gallerie", link: "/gallery" },
 ];
 
 const Header = () => {

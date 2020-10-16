@@ -1,0 +1,17 @@
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 40px 20px;
+  max-width: 300px;
+  background-color: #202020;
+  color: #daa879;
+  text-align: center;
+}
+
+.cardText {
+  padding: 15px;
+}
+
+.cardText > h2 {
+  margin-top: 0;
+}
