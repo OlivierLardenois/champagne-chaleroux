@@ -20,10 +20,10 @@ const PresentationSection: React.FC = () => {
 
   return (
     <section className={styles.sectionWrapper}>
-      <div>
-        <h1 className={styles.sectionTitle}>
-          Venez visiter notre vignoble et notre cave!
-        </h1>
+      <h1 className={styles.sectionTitle}>
+        Venez visiter notre vignoble et notre cave!
+      </h1>
+      <div className={styles.sectionParagraph}>
         <p>
           Notre vignoble s'étend sur 4 hectares autour des villages « Grands
           Cru » Avize et Oger où le seul cépage cultivé est le chardonnay. Dans
@@ -46,7 +46,7 @@ const PresentationSection: React.FC = () => {
           blancs de blancs » aux arômes briochés et toastés.
         </p>
       </div>
-      <div>
+      <div className={styles.sectionImage}>
         <Img fluid={data.family.childImageSharp.fluid} />
       </div>
     </section>

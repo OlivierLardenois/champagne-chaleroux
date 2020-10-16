@@ -1,7 +1,7 @@
 import {
   faEnvelope,
   faMapMarkedAlt,
-  faPhone
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { graphql, PageProps } from "gatsby";
