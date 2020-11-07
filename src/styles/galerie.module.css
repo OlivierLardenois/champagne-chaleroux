@@ -1,0 +1,39 @@
+.columnWrapper {
+  width: 100%;
+}
+
+.columnWrapper > * {
+  margin-bottom: 2px;
+}
+
+.galerieGrid > :last-child > :last-child {
+  margin-bottom: 0;
+}
+
+.galerieGrid {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1000px;
+}
+
+@media (min-width: 800px) {
+  .columnWrapper > * {
+    margin-bottom: 2px;
+  }
+
+  .columnWrapper > :last-child {
+    margin-bottom: 0;
+  }
+
+  .galerieGrid {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-width: 1000px;
+  }
+
+  .galerieGrid > :first-child {
+    margin-right: 2px;
+  }
+}

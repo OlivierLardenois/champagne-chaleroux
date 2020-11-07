@@ -13,6 +13,7 @@ type DataProps = {
 const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => (
   <Layout>
     <SEO title="Home" />
+    {/* TODO: Not sure is it usefull */}
     <div style={{ maxHeight: "500px" }}>
       <Img
         fluid={data.background.childImageSharp.fluid}
