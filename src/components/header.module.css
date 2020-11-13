@@ -1,4 +1,5 @@
 .header {
+  align-items: center;
   background: #202020;
   box-shadow: 0 -3px 6px 0px #c1c1c1;
   display: flex;
@@ -36,4 +37,39 @@
 
 .logo {
   margin: auto 50px;
+}
+
+.menuToggle {
+  cursor: pointer;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+.menuToggle > span {
+  background-color: white;
+  border-radius: 3px;
+  display: block;
+  height: 3px;
+  margin-bottom: 6px;
+  width: 30px;
+
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    opacity 0.55s ease;
+}
+
+.menuToggle > span:last-child {
+  margin-bottom: 0;
+}
+
+.navOpen .menuToggle > span:first-child {
+  transform: rotate(45deg) translate(-2px, -2px);
+}
+
+.navOpen .menuToggle > span:nth-child(2) {
+  opacity: 0;
+}
+
+.navOpen .menuToggle > span:last-child {
+  transform: rotate(-45deg);
 }

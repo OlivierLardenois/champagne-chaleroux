@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./header.module.css";
 
 const PAGES = [
@@ -22,10 +22,27 @@ const Header = () => {
     }
   `);
 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toogleMenu = () => {
+    console.log("ok");
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <Img className={styles.logo} fixed={data.logo.childImageSharp.fixed} />
-      <nav>
+
+      <nav className={isMenuOpen ? styles.navOpen : ""}>
+        <div className={styles.menuToggle} onClick={toogleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div></div>
+      </nav>
+
+      {/* <nav>
         <ul>
           {PAGES.map(({ label, link }) => (
             <li className={styles.linkWrapper}>
@@ -35,7 +52,7 @@ const Header = () => {
             </li>
           ))}
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 };
