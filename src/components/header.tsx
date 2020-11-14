@@ -25,7 +25,6 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toogleMenu = () => {
-    console.log("ok");
     setIsMenuOpen(!isMenuOpen);
   };
 
@@ -33,26 +32,24 @@ const Header = () => {
     <header className={styles.header}>
       <Img className={styles.logo} fixed={data.logo.childImageSharp.fixed} />
 
-      <nav className={isMenuOpen ? styles.navOpen : ""}>
+      <div className={isMenuOpen ? styles.navOpen : ""}>
+        <nav className={styles.menu}>
+          <ul>
+            {PAGES.map(({ label, link }) => (
+              <li className={styles.linkWrapper}>
+                <Link to={link} className={styles.link}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
         <div className={styles.menuToggle} onClick={toogleMenu}>
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div></div>
-      </nav>
-
-      {/* <nav>
-        <ul>
-          {PAGES.map(({ label, link }) => (
-            <li className={styles.linkWrapper}>
-              <Link to={link} className={styles.link}>
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav> */}
+      </div>
     </header>
   );
 };

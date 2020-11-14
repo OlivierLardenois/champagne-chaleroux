@@ -21,8 +21,9 @@
   align-items: center;
   color: #daa879;
   display: flex;
-  font-size: 20px;
-  padding: 0 1rem;
+  font-size: 2rem;
+  margin: 2rem 0;
+  padding: 0.5rem 0.5rem;
   text-decoration: none;
 }
 
@@ -37,6 +38,24 @@
 
 .logo {
   margin: auto 50px;
+}
+
+.menu {
+  background-color: #202020;
+  height: 100vh;
+  left: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.menu > ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .menuToggle {
@@ -60,6 +79,10 @@
 
 .menuToggle > span:last-child {
   margin-bottom: 0;
+}
+
+.navOpen .menu {
+  transform: translateX(-100%);
 }
 
 .navOpen .menuToggle > span:first-child {
