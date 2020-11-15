@@ -9,6 +9,39 @@ const PAGES = [
   { label: "Gallerie", link: "/galerie" },
 ];
 
+const HeaderLinks = ({ navClassName }: any) => (
+  <nav className={navClassName}>
+    <ul>
+      {PAGES.map(({ label, link }) => (
+        <li className={styles.linkWrapper}>
+          <Link to={link}>{label}</Link>
+        </li>
+      ))}
+    </ul>
+  </nav>
+);
+
+const SmallScreenMenu = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toogleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <div
+      className={`${styles.hamburgerMenu} ${isMenuOpen ? styles.navOpen : ""}`}
+    >
+      <HeaderLinks navClassName={styles.smallMenu} />
+      <div className={styles.menuToggle} onClick={toogleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  );
+};
+
 const Header = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -22,34 +55,15 @@ const Header = () => {
     }
   `);
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toogleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
     <header className={styles.header}>
       <Img className={styles.logo} fixed={data.logo.childImageSharp.fixed} />
 
-      <div className={isMenuOpen ? styles.navOpen : ""}>
-        <nav className={styles.menu}>
-          <ul>
-            {PAGES.map(({ label, link }) => (
-              <li className={styles.linkWrapper}>
-                <Link to={link} className={styles.link}>
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <div className={styles.menuToggle} onClick={toogleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
+      {/* Small screen menu */}
+      <SmallScreenMenu />
+
+      {/* Other screen menu */}
+      <HeaderLinks navClassName={styles.largeMenu} />
     </header>
   );
 };
