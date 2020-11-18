@@ -45,7 +45,7 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-        <div className={styles.linkWrapper} style={{ marginLeft: "10px" }}>
+        <div className={styles.linkWrapper}>
           <h3 className={styles.subtitle}>En Europe</h3>
           <ul>
             {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (

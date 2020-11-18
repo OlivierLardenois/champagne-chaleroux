@@ -13,5 +13,7 @@
 }
 
 .cardText > h2 {
+  color: #ae7743;
+  font-size: 2rem;
   margin-top: 0;
 }
