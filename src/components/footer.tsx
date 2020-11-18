@@ -27,7 +27,9 @@ const EXTERNAL_EUROPA_LINK = [
 const ExternalLink = ({ label, link }: { label: string; link: string }) => {
   return (
     <li className={styles.link}>
-      <a href={link}>{label}</a>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        {label}
+      </a>
     </li>
   );
 };
