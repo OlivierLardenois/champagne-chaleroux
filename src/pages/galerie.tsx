@@ -24,7 +24,7 @@ const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "pages.gallery" })} />
+      <SEO title={intl.formatMessage({ id: "pages.gallery" })} lang={intl.locale} />
       <div className={styles.galerieGrid}>
         <div className={styles.columnWrapper}>
           <Img fluid={data.img1.childImageSharp.fluid} />

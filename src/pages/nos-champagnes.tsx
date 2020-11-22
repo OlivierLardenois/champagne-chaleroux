@@ -17,7 +17,10 @@ const ProductsPage: React.FC<PageProps<DataProps>> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "pages.champagnes" })} />
+      <SEO
+        title={intl.formatMessage({ id: "pages.champagnes" })}
+        lang={intl.locale}
+      />
       <div
         style={{
           display: "flex",

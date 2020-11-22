@@ -16,7 +16,10 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "pages.home" })} />
+      <SEO
+        title={intl.formatMessage({ id: "pages.home" })}
+        lang={intl.locale}
+      />
       {/* TODO: Not sure is it usefull */}
       <div style={{ maxHeight: "500px" }}>
         <Img
