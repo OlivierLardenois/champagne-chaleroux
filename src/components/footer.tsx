@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./footer.module.css";
+import Language from "./language";
 
 const EXTERNAL_FRANCE_LINK = [
   { label: "Domaine Nicolas", link: "http://www.domaine-nicolas.fr" },
@@ -34,30 +35,34 @@ const ExternalLink = ({ label, link }: { label: string; link: string }) => {
   );
 };
 
-const Footer = () => {
-  return (
-    <footer className={styles.footer}>
-      <div>
-        <h2 className={styles.title}>Autres domaines à découvrir</h2>
-        <div className={styles.linkWrapper}>
-          <h3 className={styles.subtitle}>En France</h3>
-          <ul>
-            {EXTERNAL_FRANCE_LINK.map(({ label, link }) => (
-              <ExternalLink label={label} link={link} />
-            ))}
-          </ul>
-        </div>
-        <div className={styles.linkWrapper}>
-          <h3 className={styles.subtitle}>En Europe</h3>
-          <ul>
-            {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (
-              <ExternalLink label={label} link={link} />
-            ))}
-          </ul>
-        </div>
+const Footer = () => (
+  <footer className={styles.footer}>
+    <div>
+      <h2 className={styles.title}>Autres domaines à découvrir</h2>
+      <div className={styles.linkWrapper}>
+        <h3 className={styles.subtitle}>En France</h3>
+        <ul>
+          {EXTERNAL_FRANCE_LINK.map(({ label, link }) => (
+            <ExternalLink label={label} link={link} />
+          ))}
+        </ul>
       </div>
-    </footer>
-  );
-};
+      <div className={styles.linkWrapper}>
+        <h3 className={styles.subtitle}>En Europe</h3>
+        <ul>
+          {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (
+            <ExternalLink label={label} link={link} />
+          ))}
+        </ul>
+      </div>
+      <div className={styles.widgets}>
+        <div>
+          <Language />
+        </div>
+        <div>Mention Légales</div>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;
