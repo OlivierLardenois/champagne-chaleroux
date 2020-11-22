@@ -1,25 +1,32 @@
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import { Link, useIntl } from "gatsby-plugin-intl";
 import React, { useState } from "react";
 import styles from "./header.module.css";
 
 const PAGES = [
-  { label: "Accueil", link: "/" },
-  { label: "Nos Champagnes", link: "/nos-champagnes" },
-  { label: "Gallerie", link: "/galerie" },
+  { label: "home", link: "/" },
+  { label: "champagnes", link: "/nos-champagnes" },
+  { label: "gallery", link: "/galerie" },
 ];
 
-const HeaderLinks = ({ navClassName }: any) => (
-  <nav className={navClassName}>
-    <ul>
-      {PAGES.map(({ label, link }) => (
-        <li className={styles.linkWrapper}>
-          <Link to={link}>{label}</Link>
-        </li>
-      ))}
-    </ul>
-  </nav>
-);
+const HeaderLinks = ({ navClassName }: any) => {
+  const intl = useIntl();
+
+  return (
+    <nav className={navClassName}>
+      <ul>
+        {PAGES.map(({ label, link }) => (
+          <li className={styles.linkWrapper}>
+            <Link to={link}>
+              {intl.formatMessage({ id: `pages.${label}` })}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 const SmallScreenMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

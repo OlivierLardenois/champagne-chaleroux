@@ -1,5 +1,6 @@
 import { graphql, PageProps } from "gatsby";
 import Img, { FluidObject } from "gatsby-image";
+import { useIntl } from "gatsby-plugin-intl";
 import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -19,9 +20,11 @@ type DataProps = {
 };
 
 const GalleryPage: React.FC<PageProps<DataProps>> = ({ data }) => {
+  const intl = useIntl();
+
   return (
     <Layout>
-      <SEO title="Gallerie" />
+      <SEO title={intl.formatMessage({ id: "pages.gallery" })} />
       <div className={styles.galerieGrid}>
         <div className={styles.columnWrapper}>
           <Img fluid={data.img1.childImageSharp.fluid} />

@@ -1,9 +1,12 @@
 import { graphql, useStaticQuery } from "gatsby";
 import Img, { FluidObject } from "gatsby-image";
+import { useIntl } from "gatsby-plugin-intl";
 import React from "react";
+import locale from "../intl/fr.json";
 import styles from "./presentation.module.css";
 
 const PresentationSection: React.FC = () => {
+  const intl = useIntl();
   const data = useStaticQuery<{
     family: { childImageSharp: { fluid: FluidObject } };
   }>(graphql`
@@ -21,30 +24,12 @@ const PresentationSection: React.FC = () => {
   return (
     <section className={styles.sectionWrapper}>
       <h1 className={styles.sectionTitle}>
-        Venez visiter notre vignoble et notre cave!
+        {intl.formatMessage({ id: "presentation.title" })}
       </h1>
       <div className={styles.sectionParagraph}>
-        <p>
-          Notre vignoble s'étend sur 4 hectares autour des villages « Grands
-          Cru » Avize et Oger où le seul cépage cultivé est le chardonnay. Dans
-          les vignes, dont l'âge moyen est de 50 ans, nous réalisons une
-          agriculture raisonnée qui concilie la tradition viticole champenoise
-          et le respect de l’environnement.
-        </p>
-        <p>
-          Dans notre cellier et dans notre cave, le travail du vin est artisanal
-          (pas de filtration, très peu d’automatisation…). De plus, nous
-          effectuons un long « élevage sur lattes » de 10 ans minimum. En effet,
-          durant cette longue période ( 15 mois minimum pour un champagne) les
-          levures mortes présentent dans les bouteilles vont se dégrader et
-          reléguer de nombreux composés au vins (protéines et polysaccharides).
-          Ces composés vont apporter du corps au vin, de nouveaux arômes et une
-          meilleure mousse.
-        </p>
-        <p>
-          Nous proposons ainsi à la vente des vieux champagnes atypiques «
-          blancs de blancs » aux arômes briochés et toastés.
-        </p>
+        {locale.presentation.text.map((_: any, index: number) => (
+          <p>{intl.formatMessage({ id: `presentation.text.${index}` })}</p>
+        ))}
       </div>
       <div className={styles.sectionImage}>
         <Img fluid={data.family.childImageSharp.fluid} />

@@ -1,3 +1,43 @@
 {
-  "title": "Gatsby English"
+  "pictureNotFound": "Picture not found",
+  "champagnes": {
+    "brut": {
+      "title": "Brut",
+      "text": "100% chardonnay from the Harvest of 2006. Our champagne Brut reflects a bright golden colored dress. Its aromas can be perceived as toasted bread and fresh mushrooms. As you taste it you can feel some notes of oxidation as well as roast and ginger bread. The dosage is at 6 g/L."
+    },
+    "millesime": {
+      "title": "Millésime 2008",
+      "text": "Our « cuvée d’exception » 100% chardonnay. 2008 is recognized  as an excellent millésime year in  the Champagne county. Despite its age, this wine may surprise you by its freshness. Its aromas are mostly perceived as lemon and pear. As you taste it, you might find that those aromas are heightened by the wine’s tension and the low dosage (5g/L)."
+    },
+    "rose": {
+      "title": "Rosé ",
+      "text": "This cuvée is a blend of 40% pinot noir, 40% pinot meunier and 20% chardonnay. The aging process in the cellar lasts from 2 to 3 years. Its aromas are depicted as close to raspberry and strawberry. As you taste it, those aromas are filled with a great tension. The dosage is  at 6 g/L."
+    }
+  },
+  "contact": {
+    "title": "Feel free to contact us",
+    "text": [
+      "We would be happy to welcome you personally in our estate for tasting but also to visit our cellar and share our passion.",
+      "Our activity is mostly focused on the wine making and less on the commercial work that comes with it. Therefor, we recommand you to send us an e-mail or to call us before your visit so that we can make ourselves available."
+    ]
+  },
+  "footer": {
+    "estates": "Other estates to discover",
+    "france": "In France",
+    "europa": "In Europa",
+    "legal": "Legal notice"
+  },
+  "pages": {
+    "champagnes": "Our champagnes",
+    "gallery": "Gallery",
+    "home": "Home"
+  },
+  "presentation": {
+    "title": "Come and visit our vineyard and cellar!",
+    "text": [
+      "Our vineyard is 4 hectares big. It is situated all around the \"Grand Cru\" villages of Avize and Oger. In this area, the only grape variety growing is Chardonnay. In our vineyards, which are approximatelly 50 years old, we maintain a sustainable agriculture by the association of both tradition and respect of the environment.",
+      "In our cellar, we make the wine through an artisanal production (no filtration and very few automation of the equipment). Furthermore, we do a particularly long \"élevage sur latte\" which means that after the second fermentation, the bottles lay down in the cellar for no less than 10 years. During this process, the dead yeasts that remain in the bottle are going to decay and give to wine a unique taste. This means new aroma, better champagne foam and a full bodied wine.",
+      "Thus, we introduce to you a very unique vintage wine \"blanc de blanc\" recognizable by its toasted aroma and brioche flavours."
+    ]
+  }
 }

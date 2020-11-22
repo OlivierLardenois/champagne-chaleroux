@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import { useIntl } from "gatsby-plugin-intl";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -14,6 +15,7 @@ import Img from "gatsby-image";
  */
 
 const Image = () => {
+  const intl = useIntl();
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -26,9 +28,8 @@ const Image = () => {
     }
   `);
 
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>;
-  }
+  if (!data?.placeholderImage?.childImageSharp?.fluid)
+    return <div>{intl.formatMessage({ id: "pictureNotFound" })}</div>;
 
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 };

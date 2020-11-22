@@ -1,3 +1,4 @@
+import { useIntl } from "gatsby-plugin-intl";
 import React from "react";
 import styles from "./footer.module.css";
 import Language from "./language";
@@ -35,34 +36,44 @@ const ExternalLink = ({ label, link }: { label: string; link: string }) => {
   );
 };
 
-const Footer = () => (
-  <footer className={styles.footer}>
-    <div>
-      <h2 className={styles.title}>Autres domaines à découvrir</h2>
-      <div className={styles.linkWrapper}>
-        <h3 className={styles.subtitle}>En France</h3>
-        <ul>
-          {EXTERNAL_FRANCE_LINK.map(({ label, link }) => (
-            <ExternalLink label={label} link={link} />
-          ))}
-        </ul>
-      </div>
-      <div className={styles.linkWrapper}>
-        <h3 className={styles.subtitle}>En Europe</h3>
-        <ul>
-          {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (
-            <ExternalLink label={label} link={link} />
-          ))}
-        </ul>
-      </div>
-      <div className={styles.widgets}>
-        <div>
-          <Language />
+const Footer = () => {
+  const intl = useIntl();
+
+  return (
+    <footer className={styles.footer}>
+      <div>
+        <h2 className={styles.title}>
+          {intl.formatMessage({ id: "footer.estates" })}
+        </h2>
+        <div className={styles.linkWrapper}>
+          <h3 className={styles.subtitle}>
+            {intl.formatMessage({ id: "footer.france" })}
+          </h3>
+          <ul>
+            {EXTERNAL_FRANCE_LINK.map(({ label, link }) => (
+              <ExternalLink label={label} link={link} />
+            ))}
+          </ul>
         </div>
-        <div>Mention Légales</div>
+        <div className={styles.linkWrapper}>
+          <h3 className={styles.subtitle}>
+            {intl.formatMessage({ id: "footer.europa" })}
+          </h3>
+          <ul>
+            {EXTERNAL_EUROPA_LINK.map(({ label, link }) => (
+              <ExternalLink label={label} link={link} />
+            ))}
+          </ul>
+        </div>
+        <div className={styles.widgets}>
+          <div>
+            <Language />
+          </div>
+          <div> {intl.formatMessage({ id: "footer.legal" })}</div>
+        </div>
       </div>
-    </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;

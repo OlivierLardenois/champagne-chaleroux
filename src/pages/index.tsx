@@ -1,5 +1,6 @@
 import { graphql, PageProps } from "gatsby";
 import Img, { FluidObject } from "gatsby-image";
+import { useIntl } from "gatsby-plugin-intl";
 import React from "react";
 import ContactSection from "../components/contact";
 import Layout from "../components/layout";
@@ -10,20 +11,24 @@ type DataProps = {
   background: { childImageSharp: { fluid: FluidObject } };
 };
 
-const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    {/* TODO: Not sure is it usefull */}
-    <div style={{ maxHeight: "500px" }}>
-      <Img
-        fluid={data.background.childImageSharp.fluid}
-        style={{ maxHeight: "500px" }}
-      />
-    </div>
-    <PresentationSection />
-    <ContactSection />
-  </Layout>
-);
+const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => {
+  const intl = useIntl();
+
+  return (
+    <Layout>
+      <SEO title={intl.formatMessage({ id: "pages.home" })} />
+      {/* TODO: Not sure is it usefull */}
+      <div style={{ maxHeight: "500px" }}>
+        <Img
+          fluid={data.background.childImageSharp.fluid}
+          style={{ maxHeight: "500px" }}
+        />
+      </div>
+      <PresentationSection />
+      <ContactSection />
+    </Layout>
+  );
+};
 
 export default HomePage;
 
