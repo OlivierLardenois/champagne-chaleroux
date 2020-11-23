@@ -28,9 +28,18 @@
     "legal": "Legal notice"
   },
   "pages": {
-    "champagnes": "Our champagnes",
-    "gallery": "Gallery",
-    "home": "Home"
+    "champagnes": {
+      "title": "Our champagnes",
+      "description": "Welome to the Chaléroux-Ghys House, \"Grand Cru blanc de blanc\" vineyard located in Avize"
+    },
+    "gallery": {
+      "title": "Gallery",
+      "description": "Visit our \"Grand Cru blanc de blanc\" vineyard located in Avize and our amazing cellar"
+    },
+    "home": {
+      "title": "Home",
+      "description": "Welome to the Chaléroux-Ghys House, \"Grand Cru blanc de blanc\" vineyard located in Avize"
+    }
   },
   "presentation": {
     "title": "Come and visit our vineyard and cellar!",

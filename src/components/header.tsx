@@ -19,7 +19,7 @@ const HeaderLinks = ({ navClassName }: any) => {
         {PAGES.map(({ label, link }) => (
           <li className={styles.linkWrapper}>
             <Link to={link}>
-              {intl.formatMessage({ id: `pages.${label}` })}
+              {intl.formatMessage({ id: `pages.${label}.title` })}
             </Link>
           </li>
         ))}

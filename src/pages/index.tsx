@@ -17,7 +17,8 @@ const HomePage: React.FC<PageProps<DataProps>> = ({ data }) => {
   return (
     <Layout>
       <SEO
-        title={intl.formatMessage({ id: "pages.home" })}
+        title={intl.formatMessage({ id: "pages.home.title" })}
+        description={intl.formatMessage({ id: "pages.home.description" })}
         lang={intl.locale}
       />
       {/* TODO: Not sure is it usefull */}
