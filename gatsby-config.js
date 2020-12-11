@@ -27,11 +27,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ["Fondamento", "Quattrocento Sans"],
-        },
+        fonts: ["Fondamento", "Quattrocento Sans"],
+        display: "swap",
       },
     },
     {
