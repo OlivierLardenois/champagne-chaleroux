@@ -1,4 +1,4 @@
-import { useIntl } from "gatsby-plugin-intl";
+import { Link, useIntl } from "gatsby-plugin-intl";
 import React from "react";
 import styles from "./footer.module.css";
 import Language from "./language";
@@ -69,7 +69,9 @@ const Footer = () => {
           <div>
             <Language />
           </div>
-          <div> {intl.formatMessage({ id: "footer.legal" })}</div>
+          <Link to="/mentions-legales" className={styles.internPage}>
+            {intl.formatMessage({ id: "footer.legal" })}
+          </Link>
         </div>
       </div>
     </footer>

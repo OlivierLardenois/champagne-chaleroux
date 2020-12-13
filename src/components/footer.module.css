@@ -17,6 +17,14 @@
   margin: 5px 0;
 }
 
+.internPage {
+  color: #ae7743;
+}
+
+.internPage:hover {
+  color: #623408;
+}
+
 .link {
   list-style-type: none;
   margin: 0;
